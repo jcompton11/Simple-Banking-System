@@ -96,8 +96,8 @@ class BankSys:
             self.lite_query(sql_query, income, self.transfer_card)
             new_balance = self.balance - income
             self.lite_query(sql_query, new_balance, self.user)
-
-        self.lite_query(sql_query, income, self.user)
+        else:
+            self.lite_query(sql_query, income, self.user)
 
     def do_add_income(self):
         income = int(input("\nEnter income:\n").strip())
